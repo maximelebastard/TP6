@@ -14,6 +14,7 @@ public class LogProcessor extends AbstractProcessor<CtInvocation>  {
 
     @Override
     public boolean isToBeProcessed(CtInvocation candidate) {
+
         try {
             Class type = candidate.getTarget().getType().getActualClass();
             CtExecutableReference executable = candidate.getExecutable();
@@ -30,6 +31,7 @@ public class LogProcessor extends AbstractProcessor<CtInvocation>  {
 
     @Override
     public void process(CtInvocation element) {
+
         SourcePosition sp = element.getPosition();
         CompilationUnit compileUnit = sp.getCompilationUnit();
 
